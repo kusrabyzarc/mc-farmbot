@@ -1,0 +1,18 @@
+{
+  "key.category.farmbot.controls": "Farmbot",
+  "key.farmbot.toggle": "Переключить автофарм",
+  "message.farmbot.enabled": "[Farmbot] Автофарм включён",
+  "message.farmbot.disabled": "[Farmbot] Автофарм выключен",
+  "message.farmbot.no_sword": "[Farmbot] Перед стартом возьми меч в основную руку.",
+  "message.farmbot.no_sword_stop": "[Farmbot] Фарм остановлен: в выбранном слоте больше нет меча.",
+  "message.farmbot.no_food_start": "[Farmbot] Перед стартом положи еду в левую руку.",
+  "message.farmbot.no_food_disconnect": "[Farmbot] Еда в левой руке закончилась, фарм остановлен.",
+  "message.farmbot.summary": "[Farmbot] Получено %1$s опыта и %2$s уровней.",
+  "disconnect.farmbot.low_health": "Побег из-за низкого здоровья",
+  "config.farmbot.title": "Настройки Farmbot",
+  "config.farmbot.controls_hint": "Горячую клавишу можно изменить в разделе «Управление».",
+  "config.farmbot.escape_on_low_health": "Автовыход при низком здоровье",
+  "config.farmbot.critical_health_threshold": "Порог низкого здоровья: %s серд.",
+  "config.farmbot.disconnect_when_food_runs_out": "Отключаться, если закончилась еда в левой руке",
+  "config.farmbot.reset": "Сбросить"
+}

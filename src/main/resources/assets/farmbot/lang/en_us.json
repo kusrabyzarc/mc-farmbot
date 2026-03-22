@@ -1,0 +1,18 @@
+{
+  "key.category.farmbot.controls": "Farmbot",
+  "key.farmbot.toggle": "Toggle auto-farm",
+  "message.farmbot.enabled": "[Farmbot] Auto-farm enabled",
+  "message.farmbot.disabled": "[Farmbot] Auto-farm disabled",
+  "message.farmbot.no_sword": "[Farmbot] Put a sword in your main hand before starting.",
+  "message.farmbot.no_sword_stop": "[Farmbot] Farming stopped: the selected slot no longer has a sword.",
+  "message.farmbot.no_food_start": "[Farmbot] Put food into your offhand before starting.",
+  "message.farmbot.no_food_disconnect": "[Farmbot] Offhand food is over, farming stopped.",
+  "message.farmbot.summary": "[Farmbot] Gained %1$s xp and %2$s levels.",
+  "disconnect.farmbot.low_health": "Escaped due to low health",
+  "config.farmbot.title": "Farmbot Settings",
+  "config.farmbot.controls_hint": "Change the hotkey in Controls.",
+  "config.farmbot.escape_on_low_health": "Auto-disconnect on low health",
+  "config.farmbot.critical_health_threshold": "Low-health threshold: %s hearts",
+  "config.farmbot.disconnect_when_food_runs_out": "Disconnect if offhand food runs out",
+  "config.farmbot.reset": "Reset"
+}

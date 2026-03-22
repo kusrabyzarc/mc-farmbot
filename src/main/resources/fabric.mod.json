@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "farmbot",
+	"version": "${version}",
+	"name": "Farmbot",
+	"description": "Simple client-side mod to help you farm AFK.",
+	"authors": [
+		"kusrabyzarc"
+	],
+	"contact": {
+		"sources": "https://github.com/kusrabyzarc/mc-farmbot"
+	},
+	"license": "MIT",
+	"icon": "assets/farmbot/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.kusrabyzarc.farmbot.FarmbotClient"
+		],
+		"modmenu": [
+			"com.kusrabyzarc.farmbot.integration.modmenu.FarmbotModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"farmbot.client.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

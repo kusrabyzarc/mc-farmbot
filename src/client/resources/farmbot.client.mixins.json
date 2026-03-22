@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.kusrabyzarc.farmbot.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "MinecraftClientMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
