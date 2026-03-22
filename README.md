@@ -32,10 +32,6 @@ Simple client-side Fabric mod for Minecraft `1.21.10` that helps with AFK farmin
 - Press `F6` to toggle auto-farm.
 - Open Mod Menu to change health and disconnect settings.
 
-## Source
-
-- [GitHub](https://github.com/kusrabyzarc/mc-farmbot)
-
 ## License
 
 - [MIT](LICENSE)
