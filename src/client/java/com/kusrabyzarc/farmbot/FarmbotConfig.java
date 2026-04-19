@@ -11,6 +11,8 @@ import net.fabricmc.loader.api.FabricLoader;
 public final class FarmbotConfig {
 	public static final float MIN_CRITICAL_HEALTH_THRESHOLD = 2.0F;
 	public static final float MAX_CRITICAL_HEALTH_THRESHOLD = 20.0F;
+	public static final float MIN_ATTACK_EPSILON_TICKS = 0.0F;
+	public static final float MAX_ATTACK_EPSILON_TICKS = 1000.0F;
 
 	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 	private static final Path CONFIG_PATH = FabricLoader.getInstance()
@@ -22,6 +24,7 @@ public final class FarmbotConfig {
 	public boolean escapeOnLowHealth = true;
 	public float criticalHealthThreshold = 10.0F;
 	public boolean disconnectWhenFoodRunsOut = true;
+	public float attackEpsilonTicks = 0.0F;
 
 	public static FarmbotConfig get() {
 		return instance;
@@ -65,6 +68,7 @@ public final class FarmbotConfig {
 		copy.escapeOnLowHealth = this.escapeOnLowHealth;
 		copy.criticalHealthThreshold = this.criticalHealthThreshold;
 		copy.disconnectWhenFoodRunsOut = this.disconnectWhenFoodRunsOut;
+		copy.attackEpsilonTicks = this.attackEpsilonTicks;
 		return copy;
 	}
 
@@ -72,6 +76,7 @@ public final class FarmbotConfig {
 		this.escapeOnLowHealth = other.escapeOnLowHealth;
 		this.criticalHealthThreshold = other.criticalHealthThreshold;
 		this.disconnectWhenFoodRunsOut = other.disconnectWhenFoodRunsOut;
+		this.attackEpsilonTicks = other.attackEpsilonTicks;
 		this.sanitize();
 	}
 
@@ -79,6 +84,10 @@ public final class FarmbotConfig {
 		this.criticalHealthThreshold = Math.max(
 			MIN_CRITICAL_HEALTH_THRESHOLD,
 			Math.min(MAX_CRITICAL_HEALTH_THRESHOLD, this.criticalHealthThreshold)
+		);
+		this.attackEpsilonTicks = Math.max(
+			MIN_ATTACK_EPSILON_TICKS,
+			Math.min(MAX_ATTACK_EPSILON_TICKS, this.attackEpsilonTicks)
 		);
 	}
 }

@@ -34,6 +34,7 @@ public class FarmbotClient implements ClientModInitializer {
 	private boolean farmingEnabled;
 	private int startTotalExperience;
 	private int startLevel;
+	private long nextAttackTick;
 
 	@Override
 	public void onInitializeClient() {
@@ -77,6 +78,7 @@ public class FarmbotClient implements ClientModInitializer {
 		farmingEnabled = true;
 		startTotalExperience = player.totalExperience;
 		startLevel = player.experienceLevel;
+		nextAttackTick = client.world.getTime();
 		sendMessage(client, Text.translatable("message.farmbot.enabled"));
 	}
 
@@ -124,7 +126,7 @@ public class FarmbotClient implements ClientModInitializer {
 			return;
 		}
 
-		if (player.getAttackCooldownProgress(0.0F) < 1.0F) {
+		if (client.world.getTime() < nextAttackTick) {
 			return;
 		}
 
@@ -140,6 +142,7 @@ public class FarmbotClient implements ClientModInitializer {
 
 		client.interactionManager.attackEntity(player, target);
 		player.swingHand(Hand.MAIN_HAND);
+		nextAttackTick = client.world.getTime() + getAttackDelayTicks(player);
 	}
 
 	private boolean handleAutoEat(MinecraftClient client, ClientPlayerEntity player) {
@@ -157,6 +160,11 @@ public class FarmbotClient implements ClientModInitializer {
 		boolean startedUsing = isUsingOffHandItem(player);
 		suppressVanillaUseRelease = startedUsing || actionResult.isAccepted();
 		return suppressVanillaUseRelease;
+	}
+
+	private long getAttackDelayTicks(ClientPlayerEntity player) {
+		double cooldownTicks = player.getAttackCooldownProgressPerTick() + FarmbotConfig.get().attackEpsilonTicks;
+		return Math.max(1L, (long) Math.ceil(cooldownTicks));
 	}
 
 	private void stopFarming(MinecraftClient client, Text stateMessage, Text disconnectReason) {
